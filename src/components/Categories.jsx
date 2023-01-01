@@ -9,10 +9,11 @@ function Categiries() {
     <div className="categories">
       <ul>
         {categories.map((value, i) => {
-          return <li onClick={() => getCategories(i)} className={activeIndex === i ? 'active' : ''}>{value}</li>;
+          return;
+          <li onClick={() => getCategories(i)} className={activeIndex === i ? "active" : ""}> {value} </li>;
         })}
       </ul>
     </div>
-  );
+  ); 
 }
 export default Categiries;
