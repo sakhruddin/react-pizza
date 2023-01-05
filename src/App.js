@@ -4,7 +4,9 @@ import Header from './components/Header';
 import PizzaBlock from './components/PizzaBlock';
 import Sort from './components/Sort';
 import './scss/app.scss';
+import pizzas from './assets/pizzas.json'
 
+console.log(pizzas)
 function App() {
   return (
     <div className="wrapper">
@@ -17,19 +19,10 @@ function App() {
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
-            <PizzaBlock count={3}/>
-            <PizzaBlock />
-            <PizzaBlock />
-            <PizzaBlock />
-            <PizzaBlock />
-            <PizzaBlock />
-            <PizzaBlock />
-            <PizzaBlock />
-            <PizzaBlock />
-            <PizzaBlock />
-            <PizzaBlock />
-            <PizzaBlock />
-            <PizzaBlock />
+            {pizzas.map((obj) => (
+              <PizzaBlock 
+             {...obj} />
+            ))}
           </div>
         </div>
       </div>
