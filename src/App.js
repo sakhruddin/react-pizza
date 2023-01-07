@@ -7,6 +7,8 @@ import './scss/app.scss';
 import pizzas from './assets/pizzas.json'
 
 console.log(pizzas)
+
+let a = b
 function App() {
   return (
     <div className="wrapper">
