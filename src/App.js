@@ -12,6 +12,7 @@ function App() {
       .then((res) => res.json())
       .then((arr) => {
         setItems(arr)
+        
       })
   }, [])
 
