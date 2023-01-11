@@ -6,6 +6,7 @@ import Sort from './components/Sort';
 import './scss/app.scss';
 
 function App() {
+  
   const [items, setItems] = React.useState([])
   React.useEffect(() => {
     fetch('https://63bad84332d17a50907f241b.mockapi.io/items')
