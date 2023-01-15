@@ -5,6 +5,7 @@ function Categiries() {
   const getCategories = (index) => {
     setActiveIndex(index);
   };
+  
   return (
     <div className="categories">
       <ul>
