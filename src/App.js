@@ -3,6 +3,8 @@ import Header from './components/Header';
 import './scss/app.scss';
 import Home from './pages/Home';
 import NotFoundBlock from './components/notFoundBlock';
+import { Route, Routes } from 'react-router-dom';
+import Cart from './pages/Cart';
 
 function App() {
  
@@ -11,8 +13,11 @@ function App() {
     <div className="wrapper">
       <Header />
       <div className="content">
-       {/* <Home/> */}
-       <NotFoundBlock />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='*' element={<NotFoundBlock />} />
+        </Routes>
       </div>
     </div>
   );
