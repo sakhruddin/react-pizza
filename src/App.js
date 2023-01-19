@@ -1,11 +1,8 @@
 import React from 'react';
 import Header from './components/Header';
-import Categiries from './components/Categories';
-import PizzaBlock from './components/PizzaBlock';
-import { Skeleton } from './components/PizzaBlock/Skeleton';
-import Sort from './components/Sort';
 import './scss/app.scss';
 import Home from './pages/Home';
+import NotFoundBlock from './components/notFoundBlock';
 
 function App() {
  
@@ -14,7 +11,8 @@ function App() {
     <div className="wrapper">
       <Header />
       <div className="content">
-       <Home/>
+       {/* <Home/> */}
+       <NotFoundBlock />
       </div>
     </div>
   );

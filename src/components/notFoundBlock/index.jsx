@@ -1,11 +1,11 @@
 import React from 'react';
-
-const notFound = () => {
+import styles from "./NotFoundBlock.module.scss"
+const NotFoundBlock = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <h1 className={styles.root}> Ничего не найдено :( </h1>
+    </>
   );
 };
 
-export default notFound;
+export default NotFoundBlock;
