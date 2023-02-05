@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
+  
   return (
     <div className="container container--cart">
       <div className="cart">
@@ -170,7 +171,10 @@ const Cart = () => {
             </span>
           </div>
           <div class="cart__bottom-buttons">
-            <Link class="button button--outline button--add go-back-btn" to={"/"}>
+            <Link
+              class="button button--outline button--add go-back-btn"
+              to={"/"}
+            >
               <svg
                 width="8"
                 height="14"
