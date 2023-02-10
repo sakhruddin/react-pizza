@@ -7,11 +7,13 @@ import Sort from "../components/Sort";
 import Pagination from './../components/Pagination/index';
 
 const Home = () => {
+
   const { searchValue } = React.useContext(SearchContext)
   const [currentPage, setCurrentpage] = React.useState(1)
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [categoryId, setCategoryId] = React.useState(0);
+  
   const [sortType, setSortType] = React.useState({
     name: "Популярности",
     sortProperty: "rating",
