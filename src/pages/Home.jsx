@@ -4,16 +4,15 @@ import Categiries from "../components/Categories";
 import PizzaBlock from "../components/PizzaBlock";
 import { Skeleton } from "../components/PizzaBlock/Skeleton";
 import Sort from "../components/Sort";
-import Pagination from './../components/Pagination/index';
+import Pagination from "./../components/Pagination/index";
 
 const Home = () => {
-
-  const { searchValue } = React.useContext(SearchContext)
-  const [currentPage, setCurrentpage] = React.useState(1)
+  const { searchValue } = React.useContext(SearchContext);
+  const [currentPage, setCurrentpage] = React.useState(1);
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [categoryId, setCategoryId] = React.useState(0);
-  
+
   const [sortType, setSortType] = React.useState({
     name: "Популярности",
     sortProperty: "rating",
@@ -21,7 +20,6 @@ const Home = () => {
 
   React.useEffect(() => {
     setIsLoading(true);
-
     const sortBy = sortType.sortProperty.replace("-", "");
     const order = sortType.sortProperty.includes("-") ? "asc" : "desc";
     const category = categoryId > 0 ? `category=${categoryId}` : "";
@@ -50,7 +48,6 @@ const Home = () => {
     <Skeleton key={index} />
   ));
 
-
   return (
     <div className="container">
       <div className="content__top">
@@ -62,7 +59,7 @@ const Home = () => {
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">{isLoading ? skeletons : pizzas}</div>
-      <Pagination onChangePage={(number)=>setCurrentpage(number)} />
+      <Pagination onChangePage={(number) => setCurrentpage(number)} />
     </div>
   );
 };
