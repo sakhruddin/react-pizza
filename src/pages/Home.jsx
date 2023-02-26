@@ -21,9 +21,6 @@ const Home = () => {
 
 
 
-
-
-
   const { searchValue } = React.useContext(SearchContext);
   const [currentPage, setCurrentpage] = React.useState(1);
   const [items, setItems] = React.useState([]);
