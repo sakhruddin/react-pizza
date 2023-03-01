@@ -24,6 +24,7 @@ const Home = () => {
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   // const [categoryId, setCategoryId] = React.useState(0);
+  
   const [sortType, setSortType] = React.useState({
     name: "Популярности",
     sortProperty: "rating",
