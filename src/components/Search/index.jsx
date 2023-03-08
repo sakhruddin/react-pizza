@@ -4,9 +4,8 @@ import { MdOutlineClear } from "react-icons/md";
 import { SearchContext } from "../../App";
 
 const Search = () => {
+  const { searchValue, setSearchValue } = React.useContext(SearchContext);
 
- const { searchValue, setSearchValue } = React.useContext(SearchContext);
- 
   return (
     <div className={styles.root}>
       <svg
