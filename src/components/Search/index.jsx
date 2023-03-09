@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./Search.module.scss";
 import { MdOutlineClear } from "react-icons/md";
 import { SearchContext } from "../../App";
+import debounce from 'lodash.debounce'
 
 const Search = () => {
-  const { searchValue, setSearchValue } = React.useContext(SearchContext);
+  const [value, setValue] = React.useState('')
+  const { setSearchValue } = React.useContext(SearchContext);
+  const inputEl = useRef(null);
+  
+  const onButtonClick = () => {
+    setSearchValue('');
+    setValue('')
+    inputEl.current.focus();
+  };
+
+  const updateSearchValue = React.useCallback(
+    debounce((str) => {
+    setSearchValue(str)
+    }, 300),
+    [],
+  );
+
+  const onchangeInput =  event => {
+    setValue(event.target.value);
+    updateSearchValue(event.target.value);
+  };
 
   return (
     <div className={styles.root}>
@@ -41,12 +62,13 @@ const Search = () => {
         />
       </svg>
       <input
-        value={searchValue}
-        onChange={(event) => setSearchValue(event.target.value)}
+        ref={inputEl}
+        value={value}
+        onChange={onchangeInput}
         className={styles.input}
         placeholder="Поиск пиццы..."
       />
-      {searchValue && <MdOutlineClear className={styles.clearSearch} onClick={() => setSearchValue('')}/>}
+      {value && <MdOutlineClear className={styles.clearSearch} onClick={() => onButtonClick()}/>}
     </div>
   );
 };

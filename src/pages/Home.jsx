@@ -7,6 +7,8 @@ import Sort from "../components/Sort";
 import Pagination from "./../components/Pagination/index";
 import { useSelector, useDispatch } from "react-redux";
 import { setCategoryId } from "../redux/slices/filterSlice";
+import axios from 'axios';
+
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -28,14 +30,12 @@ const Home = () => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const search = searchValue ? `&search=${searchValue}` : "";
 
-    fetch(
-      `https://63bad84332d17a50907f241b.mockapi.io/items?page=${currentPage}&limit=4&${category}&${search}&sortBy=${sortBy}&order=${order}`
-    )
-      .then((res) => res.json())
-      .then((arr) => {
-        setItems(arr);
-        setIsLoading(false);
-      });
+    axios
+    .get(`https://63bad84332d17a50907f241b.mockapi.io/items?page=${currentPage}&limit=4&${category}&${search}&sortBy=${sortBy}&order=${order}`)
+    .then((res) => {
+      setItems(res.data);
+      setIsLoading(false);
+    });
 
     window.scrollTo(0, 0);
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
