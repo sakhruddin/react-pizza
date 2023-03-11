@@ -20,7 +20,7 @@ const Home = () => {
 
   const onChangePage = (number) => {
     dispatch(setCurrentPage(number))
-  }
+  };
 
   const { searchValue } = React.useContext(SearchContext);
   const [items, setItems] = React.useState([]);
