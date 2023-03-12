@@ -11,7 +11,6 @@ import axios from 'axios';
 
 
 const Home = () => {
-  
   const dispatch = useDispatch();
   const { categoryId, sort, currentPage } = useSelector((state) => state.filter);
 
