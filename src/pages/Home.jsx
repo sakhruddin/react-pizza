@@ -8,10 +8,11 @@ import Pagination from "./../components/Pagination/index";
 import { useSelector, useDispatch } from "react-redux";
 import { setCategoryId, setCurrentPage } from "../redux/slices/filterSlice";
 import axios from 'axios';
+import qs from 'qs';
 
 
 const Home = () => {
-  
+
   const dispatch = useDispatch();
   const { categoryId, sort, currentPage } = useSelector((state) => state.filter);
 
